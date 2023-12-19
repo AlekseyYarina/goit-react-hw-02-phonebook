@@ -11,6 +11,7 @@ export class ContactForm extends Component {
       number,
     };
     this.props.handleAddContact(formData);
+    e.currentTarget.reset();
   };
 
   render() {
@@ -32,7 +33,7 @@ export class ContactForm extends Component {
           <input
             type="tel"
             name="number"
-            placeholder="+38(063)111-11-11"
+            placeholder="+38(011)111-11-11"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
