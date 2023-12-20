@@ -36,12 +36,15 @@ export class App extends Component {
     this.setState({ filter: value });
   };
 
-  filteredContacts = this.state.contacts.filter(contact =>
-    contact.name.toLowerCase().includes(this.state.filter.trim().toLowerCase())
-  );
+  filteredContacts = () =>
+    this.state.contacts.filter(contact =>
+      contact.name
+        .toLowerCase()
+        .includes(this.state.filter.trim().toLowerCase())
+    );
 
   render() {
-    const filteredContacts = this.filterContacts();
+    const filteredContacts = this.filteredContacts();
     return (
       <div>
         <h1>Phonebook</h1>
